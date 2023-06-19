@@ -3,6 +3,7 @@ const router= express.Router()
 const signUpTemplateCopy=require('../models/SignUpModels')
 
 router.post('/signup',(request,response)=>{
+
    const signedUpUser= new signUpTemplateCopy({
         firstName:request.body.firstName,
         lastName:request.body.lastName,
@@ -19,6 +20,8 @@ router.post('/signup',(request,response)=>{
    .catch(error=>{
     response.json(error)
    })
+  
+   module.exports = router
 
    }
 

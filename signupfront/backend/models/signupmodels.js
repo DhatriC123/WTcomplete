@@ -2,6 +2,12 @@ const mongoose=require('mongoose')
 
 
 const signUpTemplate=new mongoose.Schema({
+    phoneno:{
+        type:Number,
+        required:true
+    },
+
+
     firstName:{
         type:String,
         required:true
@@ -15,23 +21,20 @@ const signUpTemplate=new mongoose.Schema({
         type:String,
         required:true
     },
-    // noOfSeats:{
-    //     type:Integer,
-    //     required:true
-    // },
-    seatType:{
-        type:String,
-        required:false
+    noOfSeats:{
+        type:Number,
+        required:true
     },
+    // seatType:{
+    //     type:String,
+    //     required:false
+    // },
 
     date:{
         type:Date,
         default:Date.now
     }
-    // phoneno:{
-    //     type:Int16Array
-    //     required:true
-    // }
+   
 })
 module.exports=mongoose.model('mytable',signUpTemplate)
 
